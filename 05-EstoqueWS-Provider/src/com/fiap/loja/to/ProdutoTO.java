@@ -2,6 +2,7 @@ package com.fiap.loja.to;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class ProdutoTO implements Serializable {
 
 	private int codigo;
