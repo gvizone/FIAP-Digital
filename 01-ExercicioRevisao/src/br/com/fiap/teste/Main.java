@@ -34,7 +34,7 @@ public class Main {
 		lista.add(c2);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		System.out.println(cp.getSaldo());
+		
 		for (ContaCorrente c : lista) {
 			System.out.println("Agencia: " + c.getAgencia());
 			System.out.println("Número: " + c.getNumero());
