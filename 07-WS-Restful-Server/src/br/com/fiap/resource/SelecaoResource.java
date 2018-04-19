@@ -1,7 +1,6 @@
 package br.com.fiap.resource;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -18,7 +17,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
-
 import br.com.fiap.entity.Selecao;
 import br.com.fiap.jpa.dao.SelecaoDAO;
 import br.com.fiap.jpa.dao.impl.SelecaoDAOImpl;
@@ -82,8 +80,7 @@ public class SelecaoResource {
 	
 	@POST //Cadastrar
 	@Consumes(MediaType.APPLICATION_JSON)//Recebe JSON
-	public Response cadastrar(Selecao selecao, 
-			@Context UriInfo uri) {
+	public Response cadastrar(Selecao selecao, @Context UriInfo uri) {
 		try {
 			dao.inserir(selecao);
 			dao.commit();

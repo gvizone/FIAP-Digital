@@ -42,5 +42,4 @@ public class Selecao {
 		this.numeroMundiais = numeroMundiais;
 	}
 	
-	
 }
