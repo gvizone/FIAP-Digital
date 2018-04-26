@@ -24,6 +24,7 @@ import br.com.fiap.jpa.dao.impl.PacienteDAOImpl;
 import br.com.fiap.jpa.exception.CommitException;
 import br.com.fiap.jpa.singleton.EntityManagerFactorySingleton;
 
+@Path("/paciente")
 public class PacienteResource {
 
 	public PacienteDAO dao;
