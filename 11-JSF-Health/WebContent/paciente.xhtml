@@ -1,31 +1,41 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Paciente</title>
-</h:head>
-<h:body>
-	<h1>Paciente</h1>
-	<h:form>
-		<h:messages />
-		<h:inputHidden value="#{pacienteBean.paciente.codigo}" />
-		<h:panelGrid columns="2">
-			<h:outputLabel value="Nome" for="nome" />
-			<h:inputText value="#{pacienteBean.paciente.nome}" id="nome"/>
-			
-			<h:selectBooleanCheckbox id="doador"
-				value="#{pacienteBean.paciente.doador}" />
-			<h:outputLabel value="doador" for="doador"/>
-			
-			<h:outputLabel value="Data de Nascimento" for="dtNascimento" />
-			<h:inputText value="#{pacienteBean.paciente.dataNascimento.time}" id="dtNascimento"/>
-			<f:convertDateTime pattern="dd/MM/yyyy"/>
-			
-			<h:commandButton action="#{pacienteBean.salvar}" 
-												value="Salvar" />			
-		</h:panelGrid>
-	</h:form>
-</h:body>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+ <h:head>
+ 	<title>Paciente</title>
+ 	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+	<h:outputScript library="js" name="jquery-3.3.1.min.js"/>
+	<h:outputScript library="js" name="bootstrap.min.js"/>
+ </h:head>  
+ <h:body>
+ 	<div class="container">
+	 	<h1>Paciente</h1>
+	 	<h:form>
+	 		<h:messages />
+	 		<h:inputHidden value="#{pacienteBean.paciente.codigo}" />
+	 		<div class="form-group">
+	 			<h:outputLabel value="Nome" for="nome" />
+	 			<h:inputText id="nome" styleClass="form-control" 
+	 				value="#{pacienteBean.paciente.nome}" />
+	 		</div>
+	 		<div class="form-group">
+	 			<h:outputLabel value="Data Nascimento" for="data" />
+	 			<h:inputText id="data" styleClass="form-control"
+	 				value="#{pacienteBean.paciente.dataNascimento.time}">
+	 				<f:convertDateTime pattern="dd/MM/yyyy"/>
+	 			</h:inputText>
+	 		</div>
+	 		<div class="form-group">
+	 			<h:selectBooleanCheckbox id="doador" 
+	 				value="#{pacienteBean.paciente.doador}" />
+	 			<h:outputLabel value="Doador" for="doador" />
+	 		</div>
+	 		<h:commandButton action="#{pacienteBean.salvar}" 
+	 			value="Salvar" styleClass="btn btn-primary" />
+	 	</h:form>
+ 	</div>
+ </h:body>  
 </html>
